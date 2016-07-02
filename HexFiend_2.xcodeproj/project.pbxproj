@@ -89,7 +89,6 @@
 		D04327A40CF081CD00C14250 /* HFFunctions_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D04327A30CF081CD00C14250 /* HFFunctions_Private.h */; };
 		D047E3401022CFA800EF307B /* FortunateSon.defs in Sources */ = {isa = PBXBuildFile; fileRef = D047E33F1022CFA800EF307B /* FortunateSon.defs */; settings = {ATTRIBUTES = (Server, ); }; };
 		D047E48C1022E09300EF307B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D047E48B1022E09300EF307B /* main.cpp */; };
-		D047E4CA1022E1CA00EF307B /* HexFiend.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D01E7BB80CDC530C00943F9E /* HexFiend.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D04A6B6B100EA47C00704963 /* SaveBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = D04A6B69100EA47C00704963 /* SaveBanner.xib */; };
 		D04A6B7A100EA4BC00704963 /* FindReplaceBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = D04A6B78100EA4BC00704963 /* FindReplaceBanner.xib */; };
 		D04A6B97100EA73800704963 /* JumpToOffsetBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = D04A6B95100EA73800704963 /* JumpToOffsetBanner.xib */; };
@@ -237,16 +236,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D01E7BDA0CDC540700943F9E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D047E4CA1022E1CA00EF307B /* HexFiend.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D039DC011481C18400364FA6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1088,7 +1077,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "HexFiend_2" */;
 			buildPhases = (
-				D01E7BDA0CDC540700943F9E /* CopyFiles */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -1153,7 +1141,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D047E49D1022E0D300EF307B /* PBXTargetDependency */,
 			);
 			name = HexFiend_Framework;
 			productName = HexFiend_Framework;
