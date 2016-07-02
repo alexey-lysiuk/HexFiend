@@ -30,9 +30,6 @@
                             <menuItem title="Preferences…" hidden="YES" keyEquivalent="," id="129" userLabel="121"/>
                             <menuItem title="Check for Updates..." id="745">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="744" id="747"/>
-                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" hidden="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
@@ -691,6 +688,5 @@
         <customObject id="733" customClass="OpenDriveWindowController"/>
         <customObject id="680" customClass="ChooseStringEncodingWindowController"/>
         <customObject id="717" customClass="ProcessList"/>
-        <customObject id="744" customClass="SUUpdater"/>
     </objects>
 </document>
