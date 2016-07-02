@@ -77,7 +77,6 @@
 		D0315BED1225C553008C9EAB /* HFAnnotatedTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D0315BEB1225C553008C9EAB /* HFAnnotatedTree.m */; };
 		D0370A3F0D68307A00B3A8C6 /* HFSharedMemoryByteSlice.h in Headers */ = {isa = PBXBuildFile; fileRef = D0370A3D0D68307A00B3A8C6 /* HFSharedMemoryByteSlice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0370A400D68307A00B3A8C6 /* HFSharedMemoryByteSlice.m in Sources */ = {isa = PBXBuildFile; fileRef = D0370A3E0D68307A00B3A8C6 /* HFSharedMemoryByteSlice.m */; };
-		D039DC031482DCD000364FA6 /* com.ridiculousfish.HexFiend.PrivilegedHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = D047E3151022CEFE00EF307B /* com.ridiculousfish.HexFiend.PrivilegedHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D03BD7D3146F676600881576 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		D03BD7D4146F676D00881576 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
 		D03CFA820FC7857B00EE79E4 /* DataInspectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CFA810FC7857B00EE79E4 /* DataInspectorView.xib */; };
@@ -205,20 +204,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D039DBFF1481C17C00364FA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D047E3141022CEFE00EF307B;
-			remoteInfo = FortunateSon;
-		};
-		D047E49C1022E0D300EF307B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D047E3141022CEFE00EF307B;
-			remoteInfo = Fortunate_Son;
-		};
 		D05E7A880FF615D800767D95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -236,16 +221,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D039DC011481C18400364FA6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LaunchServices;
-			dstSubfolderSpec = 1;
-			files = (
-				D039DC031482DCD000364FA6 /* com.ridiculousfish.HexFiend.PrivilegedHelper in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D05E7AA50FF6160D00767D95 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1080,12 +1055,10 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				D039DC011481C18400364FA6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D039DC001481C17C00364FA6 /* PBXTargetDependency */,
 			);
 			name = HexFiend_2;
 			productInstallPath = "$(HOME)/Applications";
@@ -1398,16 +1371,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D039DC001481C17C00364FA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D047E3141022CEFE00EF307B /* FortunateSon (PrivilegedHelper) */;
-			targetProxy = D039DBFF1481C17C00364FA6 /* PBXContainerItemProxy */;
-		};
-		D047E49D1022E0D300EF307B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D047E3141022CEFE00EF307B /* FortunateSon (PrivilegedHelper) */;
-			targetProxy = D047E49C1022E0D300EF307B /* PBXContainerItemProxy */;
-		};
 		D05E7A890FF615D800767D95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D01E7BB70CDC530C00943F9E /* HexFiend_Framework */;
@@ -1774,6 +1737,10 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework/sources/HexFiend_2_Framework_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HF_NO_PRIVILEGED_FILE_OPERATIONS,
+					"NDEBUG=1",
+				);
 				INFOPLIST_FILE = "framework/HexFiend_Framework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/HexFiend.framework/Versions/A/HexFiend";
@@ -1898,6 +1865,10 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework/sources/HexFiend_2_Framework_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HF_NO_PRIVILEGED_FILE_OPERATIONS,
+					"HFUNIT_TESTS=1",
+				);
 				INFOPLIST_FILE = "framework/HexFiend_Framework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/HexFiend.framework/Versions/A/HexFiend";
@@ -2022,6 +1993,10 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework/sources/HexFiend_2_Framework_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HF_NO_PRIVILEGED_FILE_OPERATIONS,
+					"NDEBUG=1",
+				);
 				INFOPLIST_FILE = "framework/HexFiend_Framework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/HexFiend.framework/Versions/A/HexFiend";
@@ -2163,6 +2138,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework/sources/HexFiend_2_Framework_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = HF_NO_PRIVILEGED_FILE_OPERATIONS;
 				INFOPLIST_FILE = "framework/HexFiend_Framework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/HexFiend.framework/Versions/A/HexFiend";
@@ -2272,6 +2248,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework/sources/HexFiend_2_Framework_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = HF_NO_PRIVILEGED_FILE_OPERATIONS;
 				INFOPLIST_FILE = "framework/HexFiend_Framework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/HexFiend.framework/Versions/A/HexFiend";
